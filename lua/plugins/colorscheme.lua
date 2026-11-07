@@ -4,7 +4,6 @@ return {
   priority = 1000,   -- load before other plugins
 
   opts = {
-      style = "moon",
       transparent = true,
 
       styles = {
@@ -12,7 +11,8 @@ return {
           floats = "transparent",
         },
   },
-  config = function()
+  config = function(_, opts)
+      require("tokyonight").setup(opts)
     vim.cmd.colorscheme("tokyonight-night")
   end,
 }
